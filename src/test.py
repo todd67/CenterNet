@@ -120,6 +120,7 @@ def test(opt):
 
 if __name__ == '__main__':
   opt = opts().parse()
+  torch.backends.cudnn.benchmark = not opt.keep_res
   if opt.not_prefetch_test:
     test(opt)
   else:
